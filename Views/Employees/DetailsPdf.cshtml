@@ -1,0 +1,32 @@
+@model Employee
+@{
+    Layout = null; /* PDF: no site chrome */
+}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; font-size: 12pt; color: #111; }
+    .wrap { width: 700px; margin: 0 auto; }
+    h2 { margin-bottom: 8px; }
+    .hr { height: 2px; background: #333; margin: 10px 0 20px 0; }
+    .row { display: flex; margin-bottom: 10px; }
+    .label { width: 180px; font-weight: bold; }
+    .val { flex: 1; }
+    .muted { color: #666; font-size: 10pt; margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h2>Employee Details</h2>
+    <div class="hr"></div>
+    <div class="row"><div class="label">ID</div><div class="val">@Model.Id</div></div>
+    <div class="row"><div class="label">Name</div><div class="val">@Model.Name</div></div>
+    <div class="row"><div class="label">Department</div><div class="val">@Model.Department</div></div>
+    <div class="row"><div class="label">Email</div><div class="val">@Model.Email</div></div>
+    <div class="row"><div class="label">Salary</div><div class="val">@Model.Salary.ToString("C")</div></div>
+    <div class="muted">Generated on @DateTime.Now:yyyy-MM-dd HH:mm</div>
+  </div>
+</body>
+</html>

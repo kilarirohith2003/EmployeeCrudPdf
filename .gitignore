@@ -1,0 +1,22 @@
+# dotnet
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userprefs
+*.swp
+
+# build outputs & publish
+**/wwwroot/dist/
+**/publish/
+*.log
+
+# secrets & local config
+secrets.json
+*.secret.json
+.env
+appsettings.*.local.json
+
+# Rotativa binaries (keep them OUT of git; download in envs instead)
+wwwroot/Rotativa/
