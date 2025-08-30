@@ -10,14 +10,14 @@ public class EmployeesController : Controller
         _repo = repo;
     }
 
-    // GET: /Employees
+   
     public async Task<IActionResult> Index()
     {
         var list = await _repo.GetAllAsync();
         return View(list);
     }
 
-    // GET: /Employees/Details/5
+    
     public async Task<IActionResult> Details(int id)
     {
         var emp = await _repo.GetByIdAsync(id);
@@ -25,10 +25,10 @@ public class EmployeesController : Controller
         return View(emp);
     }
 
-    // GET: /Employees/Create
+    
     public IActionResult Create() => View();
 
-    // POST: /Employees/Create
+    
     [HttpPost, ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(Employee emp)
     {
@@ -37,7 +37,7 @@ public class EmployeesController : Controller
         return RedirectToAction(nameof(Details), new { id });
     }
 
-    // GET: /Employees/Edit/5
+    
     public async Task<IActionResult> Edit(int id)
     {
         var emp = await _repo.GetByIdAsync(id);
@@ -45,7 +45,7 @@ public class EmployeesController : Controller
         return View(emp);
     }
 
-    // POST: /Employees/Edit/5
+    
     [HttpPost, ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(int id, Employee emp)
     {
@@ -58,7 +58,7 @@ public class EmployeesController : Controller
         return RedirectToAction(nameof(Details), new { id = emp.Id });
     }
 
-    // GET: /Employees/Delete/5
+    
     public async Task<IActionResult> Delete(int id)
     {
         var emp = await _repo.GetByIdAsync(id);
@@ -66,7 +66,7 @@ public class EmployeesController : Controller
         return View(emp);
     }
 
-    // POST: /Employees/Delete/5
+    
     [HttpPost, ActionName("Delete"), ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
@@ -74,13 +74,13 @@ public class EmployeesController : Controller
         return RedirectToAction(nameof(Index));
     }
 
-    // GET: /Employees/DownloadPdf/5
+    
     public async Task<IActionResult> DownloadPdf(int id)
     {
         var emp = await _repo.GetByIdAsync(id);
         if (emp == null) return NotFound();
 
-        // Use a dedicated, clean view for PDF (no buttons)
+        
         return new ViewAsPdf("DetailsPdf", emp)
         {
             FileName = $"Employee_{emp.Id}.pdf",

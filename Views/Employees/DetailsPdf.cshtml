@@ -6,27 +6,123 @@
 <html>
 <head>
   <meta charset="utf-8" />
+  <title>Employee #@Model.Id</title>
   <style>
-    body { font-family: Arial, Helvetica, sans-serif; font-size: 12pt; color: #111; }
-    .wrap { width: 700px; margin: 0 auto; }
-    h2 { margin-bottom: 8px; }
-    .hr { height: 2px; background: #333; margin: 10px 0 20px 0; }
-    .row { display: flex; margin-bottom: 10px; }
-    .label { width: 180px; font-weight: bold; }
-    .val { flex: 1; }
-    .muted { color: #666; font-size: 10pt; margin-top: 24px; }
+    :root{
+      --ink:#0f172a;         
+      --muted:#64748b;       
+      --line:#e2e8f0;        
+      --soft:#f8fafc;       
+      --accent:#2563eb;      
+      --accent-soft:#eff6ff; 
+      --ok:#059669;         
+    }
+    * { box-sizing: border-box; }
+    html,body{ margin:0; padding:0; color:var(--ink); font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;}
+    .page { width: 780px; margin: 28px auto; }
+    .header {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+  padding:0 24px;  
+}
+
+    .brand { display:flex; align-items:center; gap:12px; }
+    .logo {
+      width:40px; height:40px; border-radius:8px; background:linear-gradient(135deg, var(--accent), #7c3aed);
+    }
+    .brand h1 {
+      font-size:20px; margin:0; letter-spacing:.2px;
+    }
+    .meta { text-align:right; font-size:12px; color:var(--muted);  max-width:90%;   }
+    .tag {
+      display:inline-block; font-size:11px; padding:2px 8px; border-radius:999px; background:var(--accent-soft); color:var(--accent); border:1px solid #dbeafe;
+    }
+
+    .card {
+      border:1px solid var(--line); border-radius:12px; overflow:hidden; background:#fff;
+      box-shadow: 0 1px 0 rgba(15,23,42,.04);
+    }
+    .card-header {
+      padding:14px 18px; background:linear-gradient(180deg, #fafafa, #f5f7fb);
+      border-bottom:1px solid var(--line);
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .title { margin:0; font-size:18px; font-weight:700; letter-spacing:.2px; }
+    .subtitle { margin:2px 0 0 0; color:var(--muted); font-size:12px; }
+
+    .card-body { padding:18px; }
+    .grid { display:grid; grid-template-columns: 220px 1fr; gap:8px 18px; }
+    .label {
+      color:#334155; font-weight:600; font-size:13px; align-self:center;
+    }
+    .value {
+      padding:10px 12px; background:var(--soft); border:1px solid var(--line); border-radius:8px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .pill { font-size:11px; padding:2px 8px; border-radius:999px; border:1px solid #cbd5e1; color:#334155; background:#fff;width:90% }
+
+    .footer {
+      margin-top:14px; padding:14px 18px; border-top:1px dashed var(--line); color:var(--muted); font-size:12px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+
+    
+    .wm {
+      position:fixed; inset:auto 0 40px auto; right:40px; opacity:.065; font-weight:800; font-size:42px; transform:rotate(-12deg);
+    }
+
+    
+ @@page { margin: 10mm; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h2>Employee Details</h2>
-    <div class="hr"></div>
-    <div class="row"><div class="label">ID</div><div class="val">@Model.Id</div></div>
-    <div class="row"><div class="label">Name</div><div class="val">@Model.Name</div></div>
-    <div class="row"><div class="label">Department</div><div class="val">@Model.Department</div></div>
-    <div class="row"><div class="label">Email</div><div class="val">@Model.Email</div></div>
-    <div class="row"><div class="label">Salary</div><div class="val">@Model.Salary.ToString("C")</div></div>
-    <div class="muted">Generated on @DateTime.Now:yyyy-MM-dd HH:mm</div>
+  <div class="page">
+    <div class="header">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <h1>Employee Report</h1>
+          <div class="tag">Confidential</div>
+        </div>
+      </div>
+      <div class="meta">
+        <div><strong>Generated:</strong> @DateTime.Now</div>
+        <div><strong>Document:</strong> EMP-@Model.Id</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="title">Employee #@Model.Id</div>
+          <div class="subtitle">Full profile snapshot</div>
+        </div>
+        <div class="pill mono">ID: @Model.Id</div>
+      </div>
+
+      <div class="card-body">
+        <div class="grid">
+          <div class="label">Name</div>
+          <div class="value">@Model.Name</div>
+
+          <div class="label">Department</div>
+          <div class="value">@Model.Department</div>
+
+          <div class="label">Email</div>
+          <div class="value">@Model.Email</div>
+
+          <div class="label">Salary</div>
+          <div class="value mono">
+            @Model.Salary.ToString("C")
+          </div>
+        </div>
+      </div>
+
+      
   </div>
 </body>
 </html>

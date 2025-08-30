@@ -1,5 +1,5 @@
 using MySqlConnector;
-using Dapper; // optional; if you prefer ADO manually, remove this line & use MySqlCommand
+using Dapper; 
 using Microsoft.Extensions.Configuration;
 
 public class EmployeeRepository : IEmployeeRepository
