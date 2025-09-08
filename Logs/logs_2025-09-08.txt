@@ -1,0 +1,48 @@
+[2025-09-08 09.22.10] [INFO] [GetAllAsync]
+Message: Fetched 4 employees
+----------------------------------------------------------------------
+[2025-09-08 09.22.14] [INFO] [GetAllAsync]
+Message: Fetched 4 employees
+----------------------------------------------------------------------
+[2025-09-08 09.35.51] [INFO] [GetAllAsync]
+Message: Fetched 4 employees
+----------------------------------------------------------------------
+[2025-09-08 09.36.00] [INFO] [GetByIdAsync]
+Message: Employee 4 fetched
+----------------------------------------------------------------------
+[2025-09-08 09.36.10] [INFO] [UpdateAsync]
+Message: Updated employee #4
+----------------------------------------------------------------------
+[2025-09-08 09.36.10] [INFO] [GetByIdAsync]
+Message: Employee 4 fetched
+----------------------------------------------------------------------
+[2025-09-08 09.43.30] [INFO] [GetByIdAsync]
+Message: Employee 4 fetched
+----------------------------------------------------------------------
+[2025-09-08 09.43.33] [INFO] [GetAllAsync]
+Message: Fetched 4 employees
+----------------------------------------------------------------------
+[2025-09-08 09.57.59] [INFO] [GetAllAsync]
+Message: Fetched 4 employees
+----------------------------------------------------------------------
+[2025-09-08 09.58.01] [INFO] [GetByIdAsync]
+Message: Employee 5 fetched
+----------------------------------------------------------------------
+[2025-09-08 09.58.27] [INFO] [GetAllAsync]
+Message: Fetched 4 employees
+----------------------------------------------------------------------
+[2025-09-08 09.58.37] [INFO] [GetAllAsync]
+Message: Fetched 4 employees
+----------------------------------------------------------------------
+[2025-09-08 10.00.23] [INFO] [GetAllAsync]
+Message: Fetched 4 employees
+----------------------------------------------------------------------
+[2025-09-08 10.00.25] [WARNING] [StatusCodePages]
+Message: Status 404 for /Employees/Detail/5 | Referrer=http://localhost:5076/ | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0
+----------------------------------------------------------------------
+[2025-09-08 10.04.31] [WARNING] [StatusCodePages]
+Message: Status 404 for /Employees/Edi/5 | Referrer=http://localhost:5076/ | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0
+----------------------------------------------------------------------
+[2025-09-08 10.04.42] [WARNING] [StatusCodePages]
+Message: Status 404 for /Employees/Delet/2 | Referrer=http://localhost:5076/ | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36
+----------------------------------------------------------------------

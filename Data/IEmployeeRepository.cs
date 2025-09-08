@@ -1,11 +1,14 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using EmployeeCrudPdf.Models;
 
-public interface IEmployeeRepository
+
+namespace EmployeeCrudPdf.Data
 {
-    Task<IEnumerable<Employee>> GetAllAsync();
-    Task<Employee?> GetByIdAsync(int id);
-    Task<int> CreateAsync(Employee emp);
-    Task<bool> UpdateAsync(Employee emp);
-    Task<bool> DeleteAsync(int id);
+    public interface IEmployeeRepository
+    {
+        Task<IEnumerable<Employee>> GetAllAsync();
+        Task<Employee> GetByIdAsync(int id);
+        Task<int> CreateAsync(Employee emp);
+        Task<bool> UpdateAsync(Employee emp);
+        Task<bool> DeleteAsync(int id);
+    }
 }

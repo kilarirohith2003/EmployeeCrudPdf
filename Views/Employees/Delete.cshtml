@@ -1,8 +1,7 @@
-@model Employee
-@{
-    ViewData["Title"] = "Delete Employee";
-    Layout = "_Layout";
-}
+@model EmployeeCrudPdf.Models.Employee
+
+
+
 <h3>Delete Employee</h3>
 <div class="alert alert-warning">Are you sure you want to delete this employee?</div>
 <dl class="row">
@@ -13,6 +12,6 @@
 </dl>
 <form asp-action="Delete" method="post">
   <input type="hidden" asp-for="Id" />
-  <button type="submit" class="btn btn-danger">Delete</button>
+  <button type="submit" class="btn btn-danger"  data-log="Employees/DeleteButton" >Delete</button>
   <a class="btn btn-secondary" asp-action="Details" asp-route-id="@Model.Id">Cancel</a>
 </form>

@@ -1,8 +1,7 @@
-@model Employee
-@{
-    ViewData["Title"] = "Create Employee";
-    Layout = "_Layout";
-}
+@model EmployeeCrudPdf.Models.Employee
+
+
+
 <h3>Create Employee</h3>
 <hr />
 <form asp-action="Create" method="post" class="row g-3">
@@ -23,7 +22,7 @@
   </div>
   <div class="col-md-6">
     <label asp-for="Salary" class="form-label"></label>
-    <input asp-for="Salary" class="form-control" />
+    <input asp-for="Salary" class="form-control" type="number" step="0.01" />
     <span asp-validation-for="Salary" class="text-danger"></span>
   </div>
   <div class="col-12 d-flex gap-2">
@@ -31,6 +30,7 @@
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
   </div>
 </form>
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
